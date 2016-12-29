@@ -137,6 +137,16 @@ f.Set("email", "jon@labstack.com")
 req, err := http.NewRequest(echo.POST, "/", strings.NewReader(f.Encode()))
 ```
 
+### Setting Form Params
+
+```go
+req, err := http.NewRequest(echo.POST, "/", nil)
+req.Form = url.Values{
+  "name": []string{"Jon Snow"},
+  "email": []string{"jon@labstack.com"},
+}
+```
+
 ### Setting Path Params
 
 ```go
